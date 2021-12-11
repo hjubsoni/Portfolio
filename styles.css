@@ -1,0 +1,396 @@
+:root {
+  --Very-dark-blue: hsl(220, 13%, 13%);
+  --Dark-grayish-blue: hsl(219, 9%, 45%);
+  --Grayish-blue: hsl(220, 14%, 75%);
+  --Light-grayish-blue: hsl(223, 64%, 98%);
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%);
+  --Orange: hsl(26, 100%, 55%);
+  --Pale-orange: hsl(25, 100%, 94%)
+  }
+  
+  /*
+    1. Use a more-intuitive box-sizing model.
+  */
+  *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    /*
+      2. Remove default margin
+    */
+    * {
+      margin: 0;
+    }
+    /*
+      3. Allow percentage-based heights in the application
+    */
+    html, body {
+      height: 100%;
+    }
+    /*
+      Typographic tweaks!
+      4. Add accessible line-height
+      5. Improve text rendering
+    */
+    body {
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      font-family: 'Kumbh Sans', sans-serif;
+    }
+    /*
+      6. Improve media defaults
+    */
+    img, picture, video, canvas, svg {
+      display: block;
+      max-width: 100%;
+    }
+    /*
+      7. Remove built-in form typography styles
+    */
+    input, button, textarea, select {
+      font: inherit;
+    }
+    /*
+      8. Avoid text overflows
+    */
+    p, h1, h2, h3, h4, h5, h6 {
+      overflow-wrap: break-word;
+    }
+  
+  body {
+      display: grid;
+      grid-template-columns: minmax(32px, 1fr) minmax(min-content, 1100px) minmax(32px, 1fr);
+      grid-template-rows: 114px 1fr
+  }
+  
+  .header {
+      grid-column: 2 / 3;
+      grid-row:  1 / 2;
+      border-bottom: 4px solid var(--Light-grayish-blue);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  
+  
+  .name {
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .name:hover {
+    transition: 0.3s;
+    color: var(--Black);
+    opacity: 0.7;
+  }
+  
+  .primary-navigation {
+    display: flex;
+    list-style: none;
+    margin-left: auto;
+    gap: 24px;
+    margin-top: 8px;
+  }
+  
+  .links {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.125rem;
+    font-weight: 500;
+    position: relative;
+    color: var(--Grayish-blue)
+  }
+
+  .links.is-selected {
+    font-weight: bold;
+    color: var(--Orange);
+    opacity: 0.8;
+  }
+
+  .links.active::before {
+    background-color: var(--Orange);
+    opacity: 0.8;
+  }
+  
+  .links:hover {
+    color: var(--Very-dark-blue)
+  }
+  
+  
+  .links:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 4px;
+    bottom: -42px;
+    left: 0;
+    background-color: var(--Orange);
+    visibility: hidden;
+    transition: all 0.3s ease-in;
+  }
+  
+  .links:hover::before {
+    visibility: visible;
+    width: 100%;
+  }
+  
+  
+  
+  main {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+  }
+  
+  .home {
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+    gap: 32px;
+    flex-wrap: wrap;
+    
+  }
+  
+  .avatar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+    
+  }
+  
+  .avatar img {
+    border-radius: 40% 45% 40% 70%/60% 30% 70% 40%;
+    min-width: 100px;
+    max-height: 600px;
+    object-fit: cover;
+  }
+  
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 32px;
+    height: 50%;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2rem;
+  }
+  
+  .description {
+    text-align: center;
+  }
+  
+  .icons-list {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    justify-content: center;
+  }
+  
+  .linked-in-icon:hover,
+  .github-icon:hover {
+    opacity: 0.4;
+    transition: 0.7s;
+  }
+
+  
+.education {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px
+
+}
+  .education-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .high-school {
+    letter-spacing: 0.5px;
+  }
+
+  .profession-wrapper {
+    display: flex;
+    gap: 4px
+  }
+.current {
+  letter-spacing: 0.5px;
+}
+  .course-wrapper {
+    display: flex;
+    gap: 4px
+  }
+
+
+.language-icon-wrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 24px;
+  margin-right: 76px;
+}
+
+.english-flex {
+  display: flex;
+  gap: 4px
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 24px;
+  
+}
+
+.skills-icon {
+  margin-left: 12px
+}
+
+.skills-title {
+  margin-right: 32px;
+}
+.progress {
+  width: 75%;
+  padding: 6px;
+  border-radius: 30px;
+  background: var(--Black);
+  opacity: 0.4;  
+}
+
+.progress-bar {
+  height: 18px;
+  border-radius: 30px;
+  background-image: 
+  linear-gradient(to right, var(--Light-grayish-blue), var(--Orange));
+  transition: 0.4s linear;  
+  transition-property: width, background-color;    
+}
+
+.progress-html .progress-bar {
+  width: 55%; 
+  background-color: var(--Pale-orange);
+  animation: progressHTML 5s;
+}
+
+.progress-css .progress-bar {
+  width: 50%; 
+  background-color: var(--Orange);
+  animation: progressCSS 5s;
+}
+.progress-js .progress-bar {
+  width: 30%; 
+  background-color: var(--Orange);
+  animation: progressJS 5s;
+}
+
+@keyframes progressHTML {
+  0%   { width: 5%; background-color: var(--White);}
+  100% { width: 55%; background-color: var(--Pale-orange); }
+}
+@keyframes progressCSS {
+  0%   { width: 5%; background-color: var(--White);}
+  100% { width: 50%; background-color: var(--Orange); }
+}
+@keyframes progressJS {
+  0%   { width: 5%; background-color: var(--White);}
+  100% { width: 30%; background-color: var(--Orange); }
+}
+
+.skills-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding-bottom: 48px;
+}
+
+.percents {
+  color: var(--Dark-grayish-blue);
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin-bottom: -16px;
+  margin-top: -16px
+}
+
+.contact {
+  display: flex;
+  gap: 48px;
+  height: 100%;
+}
+.left-side {
+  flex: 1;
+  max-height: 550px;
+  margin: 24px 0px;
+}
+.city-iframe {
+  width: 100%;
+  height: 100%;
+}
+.right-side {
+  flex: 1;
+  margin-top: 24px
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px
+}
+.contact-title {
+  margin-bottom: 24px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.name-input,
+.email-input,
+.text-area {
+  color: var(--Dark-grayish-blue);
+  border: 1px solid var(--Black);
+  opacity: 0.8;
+  background-color: transparent;
+  font-style: italic;
+  padding: 16px;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+.submit-btn {
+  height: 64px;
+  background-color: var(--Pale-orange);
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 4px solid  var(--Orange);
+  -webkit-transition: background-color 500ms linear;
+  -moz-transition: background-color 500ms linear;
+  -o-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
+}
+.submit-btn:hover {
+  background-color: var(--Orange);
+}
+
+.home,
+.education,
+.contact {
+  display: none;
+}
+
+.home.is-selected,
+.education.is-selected,
+.contact.is-selected {
+  display: flex;
+}
